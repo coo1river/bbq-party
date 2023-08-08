@@ -1,0 +1,144 @@
+@font-face {
+  font-family: "KBO-Dia-Gothic_bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/KBO-Dia-Gothic_bold.woff")
+    format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NanumSquareNeo-Variable";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+p,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #e6c1a3;
+  font-family: "KBO-Dia-Gothic_bold";
+
+  overflow: hidden;
+}
+
+header {
+  padding: 80px;
+
+  background-image: url("./img/bbq.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+header h1 {
+  margin-top: 80px;
+  font-size: 110px;
+  line-height: 70px;
+
+  text-shadow: 5px 5px 0 #c74d27;
+}
+
+header strong {
+  display: block;
+  margin-top: 20px;
+
+  font-family: "NanumSquareNeo-Variable";
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 30px;
+
+  text-shadow: none;
+  background-color: #c74d27;
+  color: white;
+}
+
+/* --------header------- */
+
+main::before {
+  content: "";
+  margin: auto;
+
+  border-bottom: 60px solid white;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+
+  position: absolute;
+  top: -30px;
+}
+
+main {
+  max-width: 420px;
+
+  font-family: "NanumSquareNeo-Variable";
+  line-height: 2.3rem;
+
+  margin-top: 50px;
+  padding: 40px;
+  border-radius: 10%;
+  box-shadow: 7px 7px 0px 0px #e56e48;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+main h2 strong {
+  color: #2f64be;
+}
+
+main {
+  color: #4fc1ff;
+  background-color: white;
+}
+
+main span {
+  display: inline-block;
+  color: #ff6ec5;
+}
+
+dd,
+dt {
+  display: inline;
+}
+
+main dd {
+  margin-left: 5px;
+  color: #985335;
+}
+
+main span {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+main dt {
+  font-weight: bold;
+}
+
+/* --------main------- */
