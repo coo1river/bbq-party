@@ -22,15 +22,16 @@
 
 
   <main class="bbq-content">
+    <!-- 파티 정보 섹션 -->
     <h2 class="bbq-sub">
       <strong>const</strong>
       FES7 BBQ PARTY =
-      <span> { </span>
+      <span> &#123; </span>
     </h2>
     <dl>
       <p>
         <dt>일시:</dt>
-        <dd>'2023년 9월 22일 (금) 오후 4시 30분'</dd>
+        <dd>'9월 22일 (금) 오후 4시 30분'</dd>
       </p>
       <p>
         <dt>장소:</dt>
@@ -48,25 +49,38 @@
         <dt>주최:</dt>
         <dd>'밥 잘 먹는 먹터디'</dd>
       </p>
+      <span> &#125;; </span>
     </dl>
-    <span> } </span>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis quam ex ad! Modi sunt quas laborum repellat fuga
-      nostrum? Fugiat nulla sapiente assumenda delectus quod quasi hic sed excepturi nesciunt.</p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nulla quo rerum nihil veritatis dicta ea, totam
-      perferendis recusandae amet assumenda ab ad repellat necessitatibus, praesentium eligendi quisquam eos.
-      Temporibus?
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nulla quo rerum nihil veritatis dicta ea, totam
-      perferendis recusandae amet assumenda ab ad repellat necessitatibus, praesentium eligendi quisquam eos.
-      Temporibus?
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nulla quo rerum nihil veritatis dicta ea, totam
-      perferendis recusandae amet assumenda ab ad repellat necessitatibus, praesentium eligendi quisquam eos.
-      Temporibus?
-    </p>
+    <!-- 참가신청 섹션 -->
+    <section class="sect-submit">
+      <h3>개인정보 입력 및 참가신청</h3>
+      <form class="form">
+        <fieldset>
+          <label for="input-id">이름</label>
+          <input class="input" id="input-id" type="text" placeholder="이름">
+        </fieldset>
+        <fieldset>
+          <label for="input-phone">연락처</label>
+          <input class="input" id="input-phone" type="text" placeholder="연락처">
+        </fieldset>
+        <fieldset>
+          <label for="input-email">이메일</label>
+          <input class="input email" id="input-email" type="text" placeholder="이메일@google.com">
+        </fieldset>
+        <p>메일이 성공적으로 전송되었습니다.</p>
+        <button class="btn" type="submit">참가신청</button>
+      </form>
+    </section>
+
+    <!-- 상세위치 섹션 -->
+    <section class="sect-map">
+      <h3>상세위치</h3>
+      <p>용산구 한강대로7길 4-7, 파티룸 스튜디오 소회 용산점</p>
+      <div id="map"></div>
+    </section>
   </main>
 
   <div class="mo-fire">
-
     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
       x="0px" y="0px" width="1016px" height="493px" viewBox="0 0 1016 493" enable-background="new 0 0 1016 493"
       xml:space="preserve">
@@ -253,8 +267,45 @@
         c0.994,3.797,1.986,7.59,2.982,11.382c-0.127,5.22-0.251,10.438-0.38,15.66c-5.04,9.903-10.8,19.7-14.889,29.741
         c-3.156,7.76,0.219,14.943,12.113,19.614C963.82,417.971,967.399,461.364,956.425,464.105z" />
     </svg>
-
   </div>
+
+  <!-- 카카오맵 연동 -->
+  <script type="text/javascript"
+    src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1a8b4d102715a5d153e271a5cb11c808&libraries=services,clusterer,drawing"></script>
+  <script>
+    var container = document.getElementById('map');
+    var options = {
+      center: new kakao.maps.LatLng(37.524464, 126.962688),
+      level: 3 // 이미지 지도 확대 레벨
+    };
+    var map = new kakao.maps.Map(container, options);
+
+    // 마커가 표시될 위치입니다 
+    var markerPosition = new kakao.maps.LatLng(37.524464, 126.962688);
+
+    // 마커를 생성합니다
+    var marker = new kakao.maps.Marker({
+      position: markerPosition
+    });
+
+    // 마커가 지도 위에 표시되도록 설정합니다
+    marker.setMap(map);
+
+    // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+    // marker.setMap(null);
+
+    var iwContent = '<div style="font-size:0.8rem; padding:5px; text-align:center; width: 180px;">파티룸 스튜디오 소회 용산점<br><a href="http://kko.to/owPJArh6NH" style="color:blue" target="_blank">큰지도보기</a>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+      iwPosition = new kakao.maps.LatLng(37.524464, 126.962688); //인포윈도우 표시 위치입니다
+
+    // 인포윈도우를 생성합니다
+    var infowindow = new kakao.maps.InfoWindow({
+      position: iwPosition,
+      content: iwContent
+    });
+
+    // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+    // infowindow.open(map, marker); 
+  </script>
 </body>
 
 </html>
