@@ -19,6 +19,8 @@ h2,
 h3,
 p,
 dl,
+dd,
+button,
 fieldset,
 form,
 body {
@@ -102,8 +104,7 @@ body {
 
 .fes7 {
   display: block;
-  padding: 5px;
-  margin: 5px;
+  width: 200px;
 
   font-family: "NanumSquareNeo-Variable";
   font-size: 1.1rem;
@@ -136,7 +137,7 @@ body {
 .bbq-content {
   max-width: 390px;
 
-  line-height: 2.5rem;
+  line-height: 35px;
 
   margin: -30px 30px 30px 30px;
   padding: 30px;
@@ -179,19 +180,20 @@ dt {
 .bbq-content dt {
   font-size: 1.1rem;
   font-weight: bold;
-  text-indent: 2rem;
+  padding-left: 0.5rem;
 }
 
 .bbq-content dd {
-  margin-left: 5px;
+  font-size: 1rem;
   color: #bd5c4b;
   font-weight: bold;
+  padding-left: 0.2rem;
 }
 
 /* main - submit section */
 .sect-submit {
   grid-area: left;
-  padding: 20px 0;
+  padding: 20px 0 25px;
 }
 
 .sect-submit h3 {
@@ -238,11 +240,43 @@ dt {
   outline: 1px solid #f76d00;
 }
 
-.form .input.email {
-  margin-bottom: 0;
+/* 개인정보 미입력 경고 */
+[class^="warnning"] {
+  display: none;
+  color: #f4492e;
+  font-size: 0.8rem;
+  padding-left: 5px;
 }
 
-.sect-submit .form p {
+/* 메일 전송 완료 알림 */
+.sect-submit .form .alert-container {
+  display: none;
+  width: 100%;
+  height: fit-content;
+  position: relative;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+.sect-submit .form .alert-container > p {
   display: inline-block;
   width: 100%;
   font-size: 6px;
@@ -251,15 +285,13 @@ dt {
   color: #638f41;
   background-color: #d4e7c5;
   padding-left: 10px;
-  margin: 5px 0;
+  margin: 5px 0 0;
   box-sizing: border-box;
-  position: relative;
   border-radius: 5px;
 }
 
-.sect-submit .form p::after {
-  content: "";
-  display: block;
+.closeButton {
+  display: inline-block;
   width: 20px;
   height: 20px;
   background-image: url(./img/close.png);
@@ -267,18 +299,32 @@ dt {
   background-position: 50%;
   background-repeat: no-repeat;
   position: absolute;
-  right: 0px;
-  top: 0px;
+  right: 2px;
+  top: 0;
+  translate: 0 calc(5px + (30px - 20px) / 2);
+  background-color: transparent;
 }
 
-.form p::after:hover {
+.closeButton:hover {
   cursor: pointer;
-  background-color: #767676;
+  background-color: rgb(140, 164, 120, 0.3);
+  border-radius: 5px;
 }
 
-.form p::after:focus-visible {
+.closeButton:focus-visible {
   cursor: pointer;
-  background-color: #767676;
+  background-color: rgb(140, 164, 120, 0.6);
+  border-radius: 5px;
+  outline: 2px solid rgb(119, 130, 111);
+}
+
+.closeButton:focus {
+  background-color: rgb(140, 164, 120, 0.6);
+  border-radius: 5px;
+}
+
+.form p::after:active + .btn {
+  margin-top: 10px;
 }
 
 .btn {
@@ -290,6 +336,7 @@ dt {
   background-color: #f76d00;
   text-align: center;
   overflow: hidden;
+  margin-top: 15px;
 }
 
 .form .btn:hover {
@@ -321,6 +368,7 @@ dt {
   /* display: inline-block; */
   color: #4d5a61;
   font-size: 0.8rem;
+  font-weight: bold;
   position: relative;
   padding-left: 20px;
 }
