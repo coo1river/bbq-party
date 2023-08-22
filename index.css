@@ -101,7 +101,6 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 100;
 }
 
 .fes7 {
@@ -110,15 +109,10 @@ body {
 
   font-family: "NanumSquareNeo-Variable";
   font-size: 1.1rem;
-  font-weight: bold;
   line-height: 30px;
 
-  text-shadow: none;
   background-color: #c74d27;
   color: white;
-
-  position: relative;
-  z-index: 80;
 }
 
 /* --------main------- */
@@ -137,20 +131,14 @@ body {
 }
 
 .bbq-content {
-  max-width: 390px;
-
   line-height: 35px;
 
   margin: -30px 30px 10px 30px;
   padding: 30px;
   border-radius: 30px;
   box-shadow: 7px 7px 0px 0px #e56e48;
-  box-sizing: border-box;
 
-  display: flex;
-  flex-direction: column;
   position: relative;
-  z-index: 10;
 
   color: #4fc1ff;
   background-color: white;
@@ -191,7 +179,6 @@ dt {
 }
 
 .bbq-content dd {
-  font-size: 1rem;
   color: #bd5c4b;
   font-weight: bold;
   padding-left: 0.2rem;
@@ -341,11 +328,9 @@ dt {
 .btn {
   width: 100%;
   font-size: 14px;
-  font-weight: 400;
   color: #fff;
   border-radius: 5px;
   background-color: #f76d00;
-  text-align: center;
   overflow: hidden;
   margin-top: 15px;
 }
@@ -395,7 +380,7 @@ dt {
   /* background-position: 0px 4px; */
   position: absolute;
   left: 0;
-  top: 0;
+  top: -1px;
 }
 
 .sect-map #map {
