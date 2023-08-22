@@ -68,6 +68,8 @@ button {
 /* --------header------- */
 
 body {
+  width: 100%;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -75,6 +77,8 @@ body {
 
   background-color: #e6c1a3;
   font-family: "NanumSquareNeo-Variable";
+
+  overflow: hidden;
 }
 
 .bbq-logo {
@@ -175,6 +179,10 @@ dl > span {
 dd,
 dt {
   display: inline;
+}
+
+.bbq-content dl {
+  line-height: 30px;
 }
 
 .bbq-content dt {
@@ -279,21 +287,24 @@ dt {
 .sect-submit .form .alert-container > p {
   display: inline-block;
   width: 100%;
+
   font-size: 6px;
   font-weight: 400;
   line-height: 20px;
   color: #638f41;
   background-color: #d4e7c5;
+
   padding-left: 10px;
   margin: 5px 0 0;
   box-sizing: border-box;
   border-radius: 5px;
 }
 
-.closeButton {
+.close-button {
   display: inline-block;
   width: 20px;
   height: 20px;
+
   background-image: url(./img/close.png);
   background-size: 50%;
   background-position: 50%;
@@ -302,6 +313,7 @@ dt {
   right: 2px;
   top: 0;
   translate: 0 calc(5px + (30px - 20px) / 2);
+
   background-color: transparent;
 }
 
@@ -397,8 +409,7 @@ dt {
 /* SVG FIRE */
 
 .mo-fire {
-  width: 420px;
-  height: auto;
+  width: 440px;
 
   position: fixed;
   bottom: -50px;
