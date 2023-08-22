@@ -77,8 +77,6 @@ body {
 
   background-color: #e6c1a3;
   font-family: "NanumSquareNeo-Variable";
-
-  overflow-x: hidden;
 }
 
 .bbq-logo {
@@ -174,6 +172,7 @@ dl > span {
 
   font-size: 1.5rem;
   font-weight: bold;
+  margin: 10px 0;
 }
 
 dd,
