@@ -535,6 +535,6 @@ dt {
 /* width 1060px ~ 부터 */
 @media (min-width: 1060px) {
   .bbq-content {
-    height: calc(925px + 260px);
+    height: 960px;
   }
 }
